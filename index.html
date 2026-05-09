@@ -633,19 +633,13 @@
 
       <div class="contact-wrapper">
 
-        <form>
-
-          <input type="text" placeholder="Your Name">
-
-          <input type="email" placeholder="Email Address">
-
-          <input type="text" placeholder="Phone Number">
-
-          <textarea placeholder="Tell us about your project"></textarea>
-
-          <button class="btn">Send Message</button>
-
-        </form>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="5d2cecf4-3430-4261-83aa-bbf9f160b877">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit Form</button>
+</form>
 
         <div>
 
