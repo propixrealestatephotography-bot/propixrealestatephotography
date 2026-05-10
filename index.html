@@ -133,6 +133,23 @@ font-size:28px;
 .socials a{
 color:#fff;
 }
+
+.price-card{
+transition:transform 0.4s ease, box-shadow 0.4s ease;
+animation:floatCard 3s ease-in-out infinite;
+}
+
+.price-card:hover{
+transform:translateY(-12px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+@keyframes floatCard{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0px);}
+}
+
 @media(max-width:900px){
 .hero h1{
 font-size:3rem;
@@ -151,7 +168,19 @@ display:none;
 
 <nav>
 <div class="container nav-container">
-<h2>PROPIX</h2>
+
+<div style="display:flex; align-items:center; gap:15px;">
+
+<img src="./logo.png" alt="ProPix Logo" style="width:80px;">
+
+<div>
+<h2 style="margin:0; letter-spacing:3px;">PROPIX</h2>
+<p style="margin:0; font-size:12px; letter-spacing:2px;">
+REAL ESTATE PHOTOGRAPHY
+</p>
+</div>
+
+</div>
 
 <div class="nav-links">
 <a href="#services">Services</a>
