@@ -1,30 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ProPix Real Estate Photography Melbourne | Property Photography & Drone Services</title>
+<title>ProPix Real Estate Photography Melbourne & Pakenham</title>
+
+<meta name="description" content="Professional real estate photography in Melbourne & Pakenham. HDR property photos, drone photography, floor plans and cinematic real estate videos.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Inter',sans-serif;
 margin:0;
 background:#fff;
 color:#14233c;
 }
+
 .container{
 width:90%;
 max-width:1400px;
 margin:auto;
 }
+
 section{
 padding:80px 0;
 }
+
 nav{
 position:fixed;
 top:0;
@@ -34,20 +45,31 @@ padding:20px 0;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
 z-index:1000;
 }
+
 .nav-container{
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
+
 .nav-links{
 display:flex;
 gap:30px;
+align-items:center;
 }
+
 .nav-links a{
 text-decoration:none;
 color:#14233c;
 font-weight:600;
 }
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
 .hero{
 height:100vh;
 display:flex;
@@ -57,13 +79,16 @@ linear-gradient(to right, rgba(10,20,40,0.88), rgba(10,20,40,0.2)),
 url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop') center/cover;
 color:#fff;
 }
+
 .hero h1{
 font-size:5rem;
 line-height:1;
 }
+
 .hero span{
 color:#d7b16d;
 }
+
 .btn{
 display:inline-block;
 padding:16px 30px;
@@ -72,45 +97,68 @@ color:#fff;
 border-radius:10px;
 text-decoration:none;
 margin-right:15px;
+margin-top:10px;
 }
-.services-grid,.pricing-grid{
+
+.services-grid,
+.pricing-grid,
+.portfolio-grid,
+.recent-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
+
 .card{
 background:#fff;
 padding:35px;
 border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.05);
 text-align:center;
+transition:0.4s ease;
 }
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
 .portfolio{
 background:#f7f8fb;
 }
-.portfolio-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-.portfolio-grid img{
+
+.portfolio-grid img,
+.recent-grid img,
+.recent-grid video{
 width:100%;
 height:260px;
 object-fit:cover;
 border-radius:20px;
+transition:transform 0.4s ease;
 }
+
+.portfolio-grid img:hover,
+.recent-grid img:hover{
+transform:scale(1.03);
+}
+
 .contact-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 }
-input,textarea{
+
+input,
+textarea{
 width:100%;
 padding:16px;
 margin-bottom:20px;
 border:1px solid #ddd;
 border-radius:10px;
+font-family:'Inter',sans-serif;
+box-sizing:border-box;
 }
+
 button{
 padding:16px;
 background:#14233c;
@@ -118,55 +166,96 @@ color:#fff;
 border:none;
 border-radius:10px;
 font-weight:700;
+cursor:pointer;
+font-size:16px;
 }
+
 footer{
 background:#14233c;
 color:#fff;
 padding:40px 0;
 margin-top:40px;
 }
+
 .socials{
 display:flex;
 gap:20px;
 font-size:28px;
 }
+
 .socials a{
 color:#fff;
 }
 
-.price-card{
-transition:transform 0.4s ease, box-shadow 0.4s ease;
-animation:floatCard 3s ease-in-out infinite;
+.upload-form{
+max-width:700px;
+margin:auto;
+margin-top:40px;
 }
 
-.price-card:hover{
-transform:translateY(-12px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+#status{
+margin-top:20px;
+font-weight:700;
+text-align:center;
 }
 
-@keyframes floatCard{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0px);}
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+z-index:9999;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 @media(max-width:900px){
+
 .hero h1{
 font-size:3rem;
 }
+
 .contact-grid{
 grid-template-columns:1fr;
 }
+
+.menu-btn{
+display:block;
+}
+
 .nav-links{
+position:absolute;
+top:80px;
+right:0;
+background:#fff;
+width:220px;
+flex-direction:column;
+padding:20px;
 display:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
+
+.nav-links.active{
+display:flex;
 }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
+
 <div class="container nav-container">
 
 <div style="display:flex; align-items:center; gap:15px;">
@@ -175,25 +264,39 @@ display:none;
 
 <div>
 <h2 style="margin:0; letter-spacing:3px;">PROPIX</h2>
+
 <p style="margin:0; font-size:12px; letter-spacing:2px;">
 REAL ESTATE PHOTOGRAPHY
 </p>
+
+</div>
 </div>
 
+<div class="menu-btn">
+<i class="fa-solid fa-bars"></i>
 </div>
 
 <div class="nav-links">
+
 <a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
+<a href="#recent-work">Recent Work</a>
+<a href="#upload-section">Upload</a>
 <a href="#packages">Packages</a>
 <a href="#contact">Contact</a>
+
 </div>
 </div>
 </nav>
 
 <section class="hero">
+
 <div class="container">
-<h1>PROFESSIONAL REAL ESTATE PHOTOGRAPHY <br><span>MELBOURNE</span></h1>
+
+<h1>
+PROFESSIONAL REAL ESTATE PHOTOGRAPHY <br>
+<span>MELBOURNE</span>
+</h1>
 
 <p>
 Premium property photography, drone footage, floor plans and cinematic videos that help your listings stand out.
@@ -203,11 +306,13 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 
 <a href="#portfolio" class="btn">View Portfolio</a>
 <a href="#contact" class="btn">Get A Quote</a>
+<a href="tel:0421792742" class="btn">Call Now</a>
 
 </div>
 </section>
 
 <section id="services">
+
 <div class="container">
 
 <h2>Our Services</h2>
@@ -217,7 +322,7 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 <div class="card">
 <i class="fa-solid fa-camera fa-2x"></i>
 <h3>Real Estate Photography</h3>
-<p>Professional property photography.</p>
+<p>Professional HDR property photography.</p>
 </div>
 
 <div class="card">
@@ -243,21 +348,76 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 </section>
 
 <section class="portfolio" id="portfolio">
+
 <div class="container">
 
 <h2>Portfolio</h2>
 
 <div class="portfolio-grid">
+
 <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop">
+
 <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1400&auto=format&fit=crop">
+
 <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1400&auto=format&fit=crop">
+
 <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1400&auto=format&fit=crop">
+
 </div>
 
 </div>
 </section>
 
+<section id="recent-work" class="portfolio">
+
+<div class="container">
+
+<h2>Recent Work</h2>
+
+<p>
+Latest real estate photography, drone shoots and cinematic property videos.
+</p>
+
+<div id="gallery" class="recent-grid"></div>
+
+</div>
+</section>
+
+<section id="upload-section">
+
+<div class="container">
+
+<h2>Upload Property Media</h2>
+
+<form id="uploadForm" class="upload-form">
+
+<input
+id="title"
+type="text"
+placeholder="Property Title"
+required
+>
+
+<input
+id="file"
+type="file"
+accept="image/*,video/*"
+required
+>
+
+<button type="submit">
+Upload Media
+</button>
+
+</form>
+
+<p id="status"></p>
+
+</div>
+</section>
+
 <section id="packages">
+
 <div class="container">
 
 <h2>Packages</h2>
@@ -267,19 +427,32 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 <div class="card">
 <h3>Basic</h3>
 <h1>$300+</h1>
-<p>Professional Photography<br>Basic Editing<br>Fast Delivery</p>
+<p>
+Professional Photography<br>
+Basic Editing<br>
+Fast Delivery
+</p>
 </div>
 
 <div class="card">
 <h3>Standard</h3>
 <h1>$500+</h1>
-<p>Photography<br>Drone Coverage<br>Floor Plans</p>
+<p>
+Photography<br>
+Drone Coverage<br>
+Floor Plans
+</p>
 </div>
 
 <div class="card">
 <h3>Premium</h3>
 <h1>$900+</h1>
-<p>Photography<br>Drone Video<br>Property Video<br>Twilight Photography</p>
+<p>
+Photography<br>
+Drone Video<br>
+Property Video<br>
+Twilight Photography
+</p>
 </div>
 
 </div>
@@ -287,6 +460,7 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 </section>
 
 <section id="contact">
+
 <div class="container">
 
 <h2>Contact Us</h2>
@@ -317,6 +491,7 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 
 <p>
 <i class="fa-brands fa-whatsapp"></i>
+
 <a href="https://wa.me/61421792742" target="_blank">
 WhatsApp Chat
 </a>
@@ -324,6 +499,7 @@ WhatsApp Chat
 
 <p>
 <i class="fa-brands fa-instagram"></i>
+
 <a href="https://www.instagram.com/propixrealestatephotography1/?hl=en" target="_blank">
 Instagram Profile
 </a>
@@ -331,23 +507,29 @@ Instagram Profile
 
 <p>
 <i class="fa-brands fa-facebook"></i>
+
 <a href="https://www.facebook.com/profile.php?id=61588986824109" target="_blank">
 Facebook Page
 </a>
 </p>
 
-<p><i class="fa-solid fa-envelope"></i> propixrealestatephotography@gmail.com</p>
+<p>
+<i class="fa-solid fa-envelope"></i>
+propixrealestatephotography@gmail.com
+</p>
 
-<p><i class="fa-solid fa-location-dot"></i> Melbourne & Surrounding Areas</p>
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Melbourne & Surrounding Areas
+</p>
 
 </div>
-
 </div>
-
 </div>
 </section>
 
 <footer>
+
 <div class="container">
 
 <h2>PROPIX REAL ESTATE PHOTOGRAPHY</h2>
@@ -376,10 +558,105 @@ Professional Property Photography, Drone, Video and Marketing for Melbourne Real
 
 <br>
 
-<p>© 2026 ProPix Real Estate Photography. All Rights Reserved.</p>
+<p>
+© 2026 ProPix Real Estate Photography. All Rights Reserved.
+</p>
 
 </div>
 </footer>
+
+<a href="https://wa.me/61421792742"
+class="whatsapp-float"
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<script>
+
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', ()=>{
+navLinks.classList.toggle('active');
+});
+
+const cloudName = "dwuhccajn";
+const uploadPreset = "propix_uploads";
+
+const form = document.getElementById("uploadForm");
+
+form.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+const file = document.getElementById("file").files[0];
+const title = document.getElementById("title").value;
+
+const status = document.getElementById("status");
+
+status.innerHTML = "Uploading...";
+
+const formData = new FormData();
+
+formData.append("file", file);
+formData.append("upload_preset", uploadPreset);
+
+let resourceType = "image";
+
+if(file.type.startsWith("video")){
+resourceType = "video";
+}
+
+const response = await fetch(
+`https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`,
+{
+method: "POST",
+body: formData
+}
+);
+
+const data = await response.json();
+
+status.innerHTML = "Upload Successful";
+
+addToGallery(data.secure_url, resourceType, title);
+
+});
+
+function addToGallery(url, type, title){
+
+const gallery = document.getElementById("gallery");
+
+const div = document.createElement("div");
+
+div.classList.add("card");
+
+if(type === "video"){
+
+div.innerHTML = `
+<video controls style="width:100%; border-radius:20px;">
+<source src="${url}">
+</video>
+<h3>${title}</h3>
+`;
+
+}else{
+
+div.innerHTML = `
+<img src="${url}"
+style="width:100%; border-radius:20px;">
+<h3>${title}</h3>
+`;
+
+}
+
+gallery.prepend(div);
+
+}
+
+</script>
 
 </body>
 </html>
