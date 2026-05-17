@@ -102,8 +102,7 @@ margin-top:10px;
 
 .services-grid,
 .pricing-grid,
-.portfolio-grid,
-.recent-grid{
+.portfolio-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
@@ -111,7 +110,7 @@ gap:25px;
 
 .card{
 background:#fff;
-padding:20px;
+padding:35px;
 border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,0.05);
 text-align:center;
@@ -127,12 +126,16 @@ box-shadow:0 20px 40px rgba(0,0,0,0.12);
 background:#f7f8fb;
 }
 
-.portfolio-grid img,
-.recent-grid img{
+.portfolio-grid img{
 width:100%;
 height:260px;
 object-fit:cover;
 border-radius:20px;
+transition:transform 0.4s ease;
+}
+
+.portfolio-grid img:hover{
+transform:scale(1.03);
 }
 
 .contact-grid{
@@ -178,18 +181,6 @@ font-size:28px;
 
 .socials a{
 color:#fff;
-}
-
-.upload-form{
-max-width:700px;
-margin:auto;
-margin-top:40px;
-}
-
-#status{
-margin-top:20px;
-font-weight:700;
-text-align:center;
 }
 
 .whatsapp-float{
@@ -273,8 +264,6 @@ REAL ESTATE PHOTOGRAPHY
 
 <a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
-<a href="#recent-work">Recent Work</a>
-<a href="#upload-section">Upload</a>
 <a href="#packages">Packages</a>
 <a href="#contact">Contact</a>
 
@@ -361,43 +350,6 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 </div>
 </section>
 
-<section id="recent-work" class="portfolio">
-
-<div class="container">
-
-<h2>Recent Work</h2>
-
-<div id="gallery" class="recent-grid"></div>
-
-</div>
-</section>
-
-<section id="upload-section">
-
-<div class="container">
-
-<h2>Upload Property Media</h2>
-
-<form id="uploadForm" class="upload-form">
-
-<input
-id="file"
-type="file"
-accept="image/*"
-required
->
-
-<button type="submit">
-Upload Image
-</button>
-
-</form>
-
-<p id="status"></p>
-
-</div>
-</section>
-
 <section id="packages">
 
 <div class="container">
@@ -451,7 +403,7 @@ Twilight Photography
 
 <form action="https://api.web3forms.com/submit" method="POST">
 
-<input type="hidden" name="access_key" value="5d2cecf4-3430-4261-83aa-bbf9f160b877">
+<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
 
 <input type="text" name="name" placeholder="Your Name" required>
 
@@ -563,72 +515,6 @@ const navLinks = document.querySelector('.nav-links');
 menuBtn.addEventListener('click', ()=>{
 navLinks.classList.toggle('active');
 });
-
-const cloudName = "dwuhccajn";
-const uploadPreset = "propix_uploads";
-
-const form = document.getElementById("uploadForm");
-const gallery = document.getElementById("gallery");
-
-let savedImages = JSON.parse(localStorage.getItem("propixGallery")) || [];
-
-savedImages.forEach(url => {
-addImage(url);
-});
-
-form.addEventListener("submit", async (e)=>{
-
-e.preventDefault();
-
-const file = document.getElementById("file").files[0];
-
-const status = document.getElementById("status");
-
-status.innerHTML = "Uploading...";
-
-const formData = new FormData();
-
-formData.append("file", file);
-formData.append("upload_preset", uploadPreset);
-formData.append("folder", "propix");
-
-const response = await fetch(
-`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
-{
-method: "POST",
-body: formData
-}
-);
-
-const data = await response.json();
-
-status.innerHTML = "Upload Successful";
-
-savedImages.unshift(data.secure_url);
-
-localStorage.setItem(
-"propixGallery",
-JSON.stringify(savedImages)
-);
-
-addImage(data.secure_url);
-
-});
-
-function addImage(url){
-
-const div = document.createElement("div");
-
-div.classList.add("card");
-
-div.innerHTML = `
-<img src="${url}"
-style="width:100%; border-radius:20px;">
-`;
-
-gallery.prepend(div);
-
-}
 
 </script>
 
