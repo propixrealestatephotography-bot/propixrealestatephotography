@@ -98,10 +98,14 @@ border-radius:10px;
 text-decoration:none;
 margin-right:15px;
 margin-top:10px;
+transition:0.3s ease;
+}
+
+.btn:hover{
+transform:translateY(-3px);
 }
 
 .services-grid,
-.pricing-grid,
 .portfolio-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -131,7 +135,7 @@ width:100%;
 height:260px;
 object-fit:cover;
 border-radius:20px;
-transition:transform 0.4s ease;
+transition:0.4s ease;
 }
 
 .portfolio-grid img:hover{
@@ -201,6 +205,129 @@ text-decoration:none;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
+.pricing-grid-new{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+align-items:stretch;
+}
+
+.package-card{
+background:#fff;
+border-radius:25px;
+overflow:hidden;
+position:relative;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+transition:0.45s ease;
+border:1px solid #dfe5ee;
+animation:fadeUp 1s ease;
+}
+
+.package-card:hover{
+transform:translateY(-15px) scale(1.02);
+box-shadow:0 30px 60px rgba(0,0,0,0.15);
+}
+
+.package-top{
+background:#1d2d4a;
+padding:28px;
+text-align:center;
+color:#fff;
+}
+
+.package-top h3{
+margin:0;
+font-size:30px;
+letter-spacing:1px;
+}
+
+.package-price{
+font-size:52px;
+font-weight:800;
+text-align:center;
+padding:30px 20px;
+color:#1d2d4a;
+}
+
+.package-main-image,
+.package-bottom-image{
+width:100%;
+height:260px;
+object-fit:cover;
+transition:0.5s ease;
+}
+
+.package-card:hover .package-main-image,
+.package-card:hover .package-bottom-image{
+transform:scale(1.08);
+}
+
+.package-features{
+padding:25px;
+}
+
+.feature-row{
+display:flex;
+align-items:center;
+gap:18px;
+padding:18px 0;
+border-bottom:1px solid #ececec;
+font-size:22px;
+color:#1d2d4a;
+}
+
+.feature-row i{
+font-size:28px;
+width:40px;
+}
+
+.popular{
+transform:scale(1.03);
+}
+
+.popular-badge{
+position:absolute;
+top:18px;
+right:18px;
+background:#fff;
+width:120px;
+height:120px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+font-weight:800;
+font-size:20px;
+color:#1d2d4a;
+border:5px solid #1d2d4a;
+z-index:10;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 @media(max-width:900px){
 
 .hero h1{
@@ -229,6 +356,14 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 .nav-links.active{
 display:flex;
+}
+
+.package-price{
+font-size:38px;
+}
+
+.feature-row{
+font-size:18px;
 }
 
 }
@@ -350,47 +485,163 @@ Premium property photography, drone footage, floor plans and cinematic videos th
 </div>
 </section>
 
-<section id="packages">
+<section id="packages" style="background:#f7f8fb;">
 
 <div class="container">
 
-<h2>Packages</h2>
+<h2 style="
+text-align:center;
+font-size:48px;
+margin-bottom:60px;
+letter-spacing:2px;
+">
+OUR PACKAGES
+</h2>
 
-<div class="pricing-grid">
+<div class="pricing-grid-new">
 
-<div class="card">
-<h3>Basic</h3>
-<h1>$300+</h1>
-<p>
-Professional Photography<br>
-Basic Editing<br>
-Fast Delivery
-</p>
+<!-- BASIC -->
+
+<div class="package-card">
+
+<div class="package-top">
+<h3>BASIC MARKETING PACKAGE</h3>
 </div>
 
-<div class="card">
-<h3>Standard</h3>
-<h1>$500+</h1>
-<p>
-Photography<br>
-Drone Coverage<br>
-Floor Plans
-</p>
+<div class="package-price">
+$300 – $450
 </div>
 
-<div class="card">
-<h3>Premium</h3>
-<h1>$900+</h1>
-<p>
-Photography<br>
-Drone Video<br>
-Property Video<br>
-Twilight Photography
-</p>
+<img
+class="package-main-image"
+src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1400&auto=format&fit=crop"
+>
+
+<div class="package-features">
+
+<div class="feature-row">
+<i class="fa-solid fa-camera"></i>
+<span>Photos (15–20)</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-vector-square"></i>
+<span>Floor Plan</span>
 </div>
 
 </div>
+
+<img
+class="package-bottom-image"
+src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop"
+>
+
 </div>
+
+<!-- STANDARD -->
+
+<div class="package-card popular">
+
+<div class="popular-badge">
+MOST<br>POPULAR
+</div>
+
+<div class="package-top">
+<h3>STANDARD PACKAGE</h3>
+</div>
+
+<div class="package-price">
+$400 – $650
+</div>
+
+<img
+class="package-main-image"
+src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1400&auto=format&fit=crop"
+>
+
+<div class="package-features">
+
+<div class="feature-row">
+<i class="fa-solid fa-camera"></i>
+<span>Photos (15–20)</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-helicopter"></i>
+<span>Drone Photos</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-vector-square"></i>
+<span>Floor Plan</span>
+</div>
+
+</div>
+
+<img
+class="package-bottom-image"
+src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1400&auto=format&fit=crop"
+>
+
+</div>
+
+<!-- PREMIUM -->
+
+<div class="package-card">
+
+<div class="package-top">
+<h3>PREMIUM PACKAGE</h3>
+</div>
+
+<div class="package-price">
+$700 – $1,200+
+</div>
+
+<img
+class="package-main-image"
+src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=1400&auto=format&fit=crop"
+>
+
+<div class="package-features">
+
+<div class="feature-row">
+<i class="fa-solid fa-camera"></i>
+<span>Photos (15–20)</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-helicopter"></i>
+<span>Drone Photos</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-video"></i>
+<span>Video</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-vector-square"></i>
+<span>Floor Plan</span>
+</div>
+
+<div class="feature-row">
+<i class="fa-solid fa-moon"></i>
+<span>Twilight Shot</span>
+</div>
+
+</div>
+
+<img
+class="package-bottom-image"
+src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop"
+>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="contact">
